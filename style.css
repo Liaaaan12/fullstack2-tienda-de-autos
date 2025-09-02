@@ -104,8 +104,8 @@ main {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Catálogo de Productos y Blog */
-.product-catalog, .blog-section {
+/* Secciones de Contenido */
+.product-catalog, .blog-section, .contact-section {
     text-align: center;
     margin-top: 80px;
 }
@@ -129,6 +129,14 @@ h1, h2, h3 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     margin-top: 40px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 /* Estilos de las Categorías (Bloques Grandes) */
@@ -177,8 +185,8 @@ h1, h2, h3 {
     margin: 5px 0;
 }
 
-/* Estilos del Blog */
-.blog-post {
+/* Estilos de Blog y Tarjetas de Productos */
+.blog-post, .product-card {
     background-color: var(--card-background);
     padding: 25px;
     border-radius: 12px;
@@ -187,12 +195,12 @@ h1, h2, h3 {
     text-align: center;
 }
 
-.blog-post:hover {
+.blog-post:hover, .product-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-.blog-post h4 {
+.blog-post h4, .product-card h3 {
     font-size: 1.6em;
     color: var(--bright-red);
     margin-top: 0;
@@ -214,6 +222,55 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
 }
+
+/* Estilos para la página de Contacto */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.contact-info-item {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info-item h3 {
+    font-size: 1.8em;
+    color: var(--bright-red);
+    margin-bottom: 10px;
+}
+
+.contact-info-item p {
+    font-size: 1.1em;
+}
+
+.social-media {
+    margin-top: 80px;
+}
+
+.social-media h3 {
+    font-size: 2em;
+    color: var(--bright-red);
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.social-links img {
+    border-radius: 50%;
+}
+
 
 /* Pie de Página (Footer) */
 footer {
