@@ -16,7 +16,7 @@
             <a href="catalogo.html">Catálogo</a>
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
-            <a href="#" class="cta-button">Mi Cuenta</a>
+            <a href="mi-cuenta.html" class="cta-button">Mi Cuenta</a>
         </nav>
     </header>
 
@@ -30,24 +30,28 @@
                 <p>Encuentra el motor perfecto para tu vehículo, nuevo o usado, con garantía de calidad.</p>
                 <div class="category-grid">
                     <div class="item">
+                        <img src="imagenes/motor mitsubishi l200.jpg" alt="motor mitsubishi l200">
                         <h4>Motor mitsubishi l200</h4>
-                        <img src="imagenes/motor mitsubishi l200.jpg" alt="motor l200" style="width:135px;height:140px;">
                         <p>$500.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-l200', name: 'Motor Mitsubishi L200', price: 500000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
+                        <img src="imagenes/motor toyota yaris.jpg" alt="motor toyota yaris">
                         <h4>Motor Toyota Yaris Sport</h4>
-                        <img src="imagenes/motor toyota yaris.jpg" alt="motor yaris" style="width:135px;height:140px;">
                         <p>900.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-yaris', name: 'Motor Toyota Yaris Sport', price: 900000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
+                        <img src="imagenes/motor ford f150.jpg" alt="motor ford f-150">
                         <h4>Motor Ford F-150</h4>
-                        <img src="imagenes/motor ford f150.jpg" alt="motor ford f-150" style="width:135px;height:140px;">
                         <p>$1.200.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-f150', name: 'Motor Ford F-150', price: 1200000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
+                        <img src="imagenes/motor hyundai accent.jpg" alt="motor hyundai accent">
                         <h4>Motor Hyundai Accent</h4>
-                        <img src="imagenes/motor hyundai accent.jpg" alt="motor hyundai accent" style="width:135px;height:140px;">
                         <p>$450.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-accent', name: 'Motor Hyundai Accent', price: 450000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -57,19 +61,22 @@
                 <p>Kits completos, pastillas, discos y más para asegurar tu viaje.</p>
                 <div class="category-grid">
                     <div class="item">
+                        <img src="imagenes/Susuki Swift Sport Kits de frenos.jpg" alt="kit de frenos Susuki">
                         <h4>Kit de Frenos Susuki Swift sport</h4>
-                        <img src="imagenes/Susuki Swift Sport Kits de frenos.jpg" alt="kit de frenos Susuki" style="width:135px;height:140px;">
                         <p>$120.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'frenos-suzuki', name: 'Kit de Frenos Susuki Swift sport', price: 120000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
+                        <img src="imagenes/pastillas de frenos bosh.jpg" alt="pastillas de freno bosh">
                         <h4>Pastillas de Freno Bosh</h4>
-                        <img src="imagenes/pastillas de frenos bosh.jpg" alt="pastillas de freno bosh" style="width:135px;height:140px;">
                         <p>$45.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'pastillas-bosh', name: 'Pastillas de Freno Bosh', price: 45000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
-                        <h4>liquido para frenos</h4>
-                        <img src="imagenes/luqido para frenos.jpg" alt="liquido para frenos" style="width:180px;height:140px;">
+                        <img src="imagenes/luqido para frenos.jpg" alt="liquido para frenos">
+                        <h4>Liquido para frenos</h4>
                         <p>$20.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'liquido-frenos', name: 'Liquido para frenos', price: 20000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -79,14 +86,16 @@
                 <p>Cajas de cambio manuales y automáticas para una transmisión perfecta.</p>
                 <div class="category-grid">
                     <div class="item">
+                        <img src="imagenes/caja cambios automaticos ford ranger.jpg" alt="caja de cambios ford ranger">
                         <h4>Caja de Cambios Automática Ford Ranger (usada)</h4>
-                        <img src="imagenes/caja cambios automaticos ford ranger.jpg" alt="caja de cambios ford ranger" style="width:250px;height:180px;">
                         <p>$480.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'caja-ford', name: 'Caja de Cambios Automatica Ford Ranger', price: 480000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
+                        <img src="imagenes/caja cambios manual chevrolet spark.jpg" alt="caja de cambios chevrolet spark">
                         <h4>Caja de Cambios Manual Chevrolet Spark (nuevo)</h4>
-                        <img src="imagenes/caja cambios manual chevrolet spark.jpg" alt="caja de cambios chevrolet spark" style="width:250px;height:180px;">
                         <p>$220.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'caja-chevy', name: 'Caja de Cambios Manual Chevrolet Spark', price: 220000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -97,19 +106,22 @@
 
                 <div class="category-grid">
                     <div class="item">
+                        <img src="imagenes/volante momo deportivo.jpg" alt="accesorios para autos">
                         <h4>Volante deportivo Momo</h4>
-                        <img src="imagenes/volante momo deportivo.jpg" alt="accesorios para autos" style="width:200px;height:180px;">
                         <p>$150.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'volante-momo', name: 'Volante deportivo Momo', price: 150000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
-                        <h4>butacas deportivas de fibra</h4>
-                        <img src="imagenes/Butacas deportivas fibra.jpg" alt="butacas deportivas de fibra" style="width:200px;height:180px;">
+                        <img src="imagenes/Butacas deportivas fibra.jpg" alt="butacas deportivas de fibra">
+                        <h4>Butacas deportivas de fibra</h4>
                         <p>$500.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'butacas-fibra', name: 'Butacas deportivas de fibra', price: 500000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
+                        <img src="imagenes/kit de luces led.jpg" alt="kit de luces led">
                         <h4>Kit de Luces LED</h4>
-                        <img src="imagenes/kit de luces led.jpg" alt="kit de luces led" style="width:250px;height:180px;">
                         <p>$25.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'luces-led', name: 'Kit de Luces LED', price: 25000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -119,14 +131,16 @@
                 <p>Productos esenciales para el mantenimiento preventivo de tu auto.</p>
                 <div class="category-grid">
                     <div class="item">
+                        <img src="imagenes/aceite de motor castrol.jpg" alt="aceite de motor castrol">
                         <h4>Aceite de Motor Castrol</h4>
-                        <img src="imagenes/aceite de motor castrol.jpg" alt="aceite de motor castrol" style="width:135px;height:140px;">
                         <p>$50.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'aceite-castrol', name: 'Aceite de Motor Castrol', price: 50000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
-                        <h4>anticogelante prestone</h4>
-                        <img src="imagenes/anticogelante prestone.jpg" alt="anticogelante prestone" style="width:135px;height:140px;">
+                        <img src="imagenes/anticogelante prestone.jpg" alt="anticogelante prestone">
+                        <h4>Anticogelante Prestone</h4>
                         <p>$30.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'anticongelante-prestone', name: 'Anticogelante Prestone', price: 30000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -138,52 +152,11 @@
                     <div class="item">
                         <h4>Diagnóstico de Fallas</h4>
                         <p>$25.000 CLP</p>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'diagnostico', name: 'Diagnóstico de Fallas', price: 25000})">Añadir al Carrito</button>
                     </div>
-                <div class="item">
-                        <h4>Revisión General</h4>
-                        <p>$40.000 CLP</p>
-                </div>
-                <div class="item">
-                        <h4>Mantenimiento Preventivo</h4>
-                        <p>$60.000 CLP</p>
-                </div>
-                <div class="item">
-                        <h4>Reparación de Frenos</h4>
-                        <p>$80.000 CLP</p>
-                </div>
-                <div class="item">
-                        <h4>Cambio de Aceite y Filtros</h4>
-                        <p>$35.000 CLP</p>
-                </div>
-                <div class="item">
-                        <h4>Alineación y Balanceo</h4>
-                        <p>$50.000 CLP</p>
-                </div>
-                <div class="item">
-                        <h4>Reparación de Motor</h4>
-                        <p>$200.000 CLP</p>
-                </div>
-                <div class="item">
-                    <h4>Reparación de Transmisión</h4>
-                    <p>$250.000 CLP</p>
-                </div>
-                <div class="item">
-                    <h4>Reparación de Sistema Eléctrico</h4>
-                    <p>$150.000 CLP</p>
-                </div>
-                <div class="item">
-                    <h4>Reparación de Suspensión</h4>
-                    <p>$180.000 CLP</p>
-                </div>
-                <div class="item">
-                    <h4>Reparación de Sistema de Escape</h4>
-                    <p>$120.000 CLP</p>
-                </div>
-                <div class="item">
-                    <h4>Reparación de Aire Acondicionado</h4>
-                    <p>$160.000 CLP</p>
                 </div>
             </div>
+
         </section>
     </main>
 
@@ -193,5 +166,6 @@
         <p>&copy; 2024 Mundo Auto. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="app.js"></script>
 </body>
 </html>

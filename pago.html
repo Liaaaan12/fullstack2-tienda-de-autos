@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar - Mundo Auto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+</head>
+<body>
+
+    <header>
+        <div class="logo">MUNDO AUTO</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="mi-cuenta.html" class="cta-button">Mi Cuenta</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payment-section">
+            <h1>Confirmación de Pago</h1>
+            <p>Por favor, revisa el resumen de tu pedido antes de proceder al pago.</p>
+
+            <div class="payment-summary">
+                <h2>Resumen de la Compra</h2>
+                <div id="cart-summary">
+                    </div>
+                
+                <hr style="border-color: rgba(255, 255, 255, 0.2);">
+                <p class="total-price"></p>
+
+                <button class="pay-button" onclick="window.location.href='index.html'">Proceder al Pago Seguro</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Mundo Auto es una tienda online chilena sin ubicación física, con envíos a todo el país.</p>
+        <p>Contáctanos a través de nuestro chat de soporte que redirige a WhatsApp para consultas.</p>
+        <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Lógica para cargar el carrito en esta página
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartSummary = document.getElementById('cart-summary');
+            const totalPriceElement = document.querySelector('.total-price');
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartSummary.innerHTML = '<p>El carrito está vacío.</p>';
+                totalPriceElement.textContent = `Total: $0 CLP`;
+            } else {
+                cartSummary.innerHTML = '';
+                cart.forEach(item => {
+                    const itemElement = document.createElement('p');
+                    itemElement.textContent = `${item.name} (${item.quantity} unid.) - $${(item.price * item.quantity).toLocaleString('es-CL')} CLP`;
+                    cartSummary.appendChild(itemElement);
+                    total += item.price * item.quantity;
+                });
+                totalPriceElement.textContent = `Total: $${total.toLocaleString('es-CL')} CLP`;
+            }
+        });
+    </script>
+</body>
+</html>
