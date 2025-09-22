@@ -17,6 +17,7 @@
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
             <a href="mi-cuenta.html" class="cta-button">Mi Cuenta</a>
+            <a href="#" class="cart-icon" onclick="openCart()">🛒<span id="cart-count" class="cart-count">0</span></a>
         </nav>
     </header>
 
@@ -33,7 +34,7 @@
                         <img src="imagenes/motor mitsubishi l200.jpg" alt="motor mitsubishi l200">
                         <h4>Motor mitsubishi l200</h4>
                         <p>$500.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-l200', name: 'Motor Mitsubishi L200', price: 500000})">Añadir al Carrito</button>
+                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-l200', name: 'Motor mitsubishi l200', price: 500000})">Añadir al Carrito</button>
                     </div>
                     <div class="item">
                         <img src="imagenes/motor toyota yaris.jpg" alt="motor toyota yaris">
@@ -163,8 +164,21 @@
     <footer>
         <p>Mundo Auto es una tienda online chilena sin ubicación física, con envíos a todo el país.</p>
         <p>Contáctanos a través de nuestro chat de soporte que redirige a WhatsApp para consultas.</p>
-        <p>&copy; 2024 Mundo Auto. Todos los derechos reservados.</p>
+        <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-summary-footer">
+                <p>Total: <span id="cart-total">$0 CLP</span></p>
+                <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

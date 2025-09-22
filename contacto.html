@@ -6,8 +6,7 @@
     <title>Contacto - Mundo Auto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
-</head>
-<body>
+</head><body>
 
     <header>
         <div class="logo">MUNDO AUTO</div>
@@ -17,6 +16,7 @@
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
             <a href="mi-cuenta.html" class="cta-button">Mi Cuenta</a>
+            <a href="#" class="cart-icon" onclick="openCart()">🛒<span id="cart-count" class="cart-count">0</span></a>
         </nav>
     </header>
 
@@ -62,8 +62,21 @@
     <footer>
         <p>Mundo Auto es una tienda online chilena sin ubicación física, con envíos a todo el país.</p>
         <p>Contáctanos a través de nuestro chat de soporte que redirige a WhatsApp para consultas.</p>
-        <p>&copy; 2024 Mundo Auto. Todos los derechos reservados.</p>
+        <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-summary-footer">
+                <p>Total: <span id="cart-total">$0 CLP</span></p>
+                <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

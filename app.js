@@ -7,13 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Elementos del DOM para el carrito
+    const cartModal = document.getElementById('cart-modal');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    const cartCountElement = document.getElementById('cart-count');
+
     // Función para actualizar el estado del carrito en el almacenamiento local
     const updateCart = () => {
         localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
     };
 
     // --- Funcionalidades de Autenticación y Perfil ---
-    // (Para la página de "Mi Cuenta")
 
     // Función para registrar un usuario
     window.registerUser = (event) => {
@@ -54,16 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Lógica para cerrar sesión
+    window.logoutUser = () => {
+        localStorage.removeItem('loggedInUser');
+        alert('Has cerrado sesión.');
+        window.location.href = 'index.html';
+    };
+
     // --- Funcionalidades del Carrito de Compras ---
 
     // Función para agregar un producto al carrito
     window.addToCart = (product) => {
-        [cite_start]// Validación de usuario: Para comprar, los usuarios deben registrarse y ser mayores de 18 años. [cite: 1]
-        if (!loggedInUser) {
-            alert('Debes iniciar sesión para agregar productos al carrito.');
-            return;
-        }
-
         const productInCart = cart.find(item => item.id === product.id);
         if (productInCart) {
             productInCart.quantity++;
@@ -74,10 +81,57 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`${product.name} ha sido agregado al carrito.`);
     };
 
-    // Lógica para cerrar sesión
-    window.logoutUser = () => {
-        localStorage.removeItem('loggedInUser');
-        alert('Has cerrado sesión.');
-        window.location.href = 'index.html';
+    // Función para renderizar el carrito
+    const renderCart = () => {
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
+        let totalItems = 0;
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>El carrito está vacío.</p>';
+        } else {
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <div class="cart-item-details">
+                        <h5>${item.name}</h5>
+                        <p>${item.quantity} x $${item.price.toLocaleString('es-CL')} CLP</p>
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart('${item.id}')">Eliminar</button>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+                total += item.price * item.quantity;
+                totalItems += item.quantity;
+            });
+        }
+        cartTotalElement.textContent = `$${total.toLocaleString('es-CL')} CLP`;
+        cartCountElement.textContent = totalItems;
     };
+
+    // Función para eliminar un producto del carrito
+    window.removeFromCart = (productId) => {
+        cart = cart.filter(item => item.id !== productId);
+        updateCart();
+    };
+
+    // Funciones para abrir y cerrar el modal del carrito
+    window.openCart = () => {
+        cartModal.style.display = 'flex';
+        renderCart();
+    };
+
+    window.closeCart = () => {
+        cartModal.style.display = 'none';
+    };
+
+    // Cerrar el modal haciendo clic fuera de él
+    window.onclick = function(event) {
+        if (event.target == cartModal) {
+            closeCart();
+        }
+    };
+
+    // Inicializar el carrito al cargar la página
+    renderCart();
 });

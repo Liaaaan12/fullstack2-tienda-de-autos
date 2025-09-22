@@ -17,6 +17,7 @@
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
             <a href="mi-cuenta.html" class="cta-button">Mi Cuenta</a>
+            <a href="#" class="cart-icon" onclick="openCart()">🛒<span id="cart-count" class="cart-count">0</span></a>
         </nav>
     </header>
 
@@ -30,7 +31,7 @@
                     <h4>Guía para el Cambio de Aceite de Motor</h4>
                     <p>Aprende a realizar un cambio de aceite de forma segura para alargar la vida de tu motor.</p>
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zEPecqlQAx8" title="Cómo cambiar el aceite del coche | Tutorial Completo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zEPecqlQAx8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -38,7 +39,7 @@
                     <h4>Tutorial de Instalación de Pastillas de Freno</h4>
                     <p>Un video paso a paso para reemplazar tus pastillas de freno y asegurar tu seguridad.</p>
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EpxuCZ5YekE" title="Cómo cambiar las pastillas de freno de un coche | VÍDEO TUTORIAL DE AUTODOC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EpxuCZ5YekE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -46,7 +47,7 @@
                     <h4>Mantenimiento Básico del Sistema de Frenos</h4>
                     <p>Conoce la importancia de revisar el líquido de frenos y el estado de tus discos.</p>
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DUFyLESK3-I" title="Mantenimiento de Mordaza o Caliper de Frenos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DUFyLESK3-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -54,7 +55,7 @@
                     <h4>Cómo Instalar un Kit de Luces LED</h4>
                     <p>Mejora la iluminación de tu auto con este sencillo tutorial de instalación de luces LED.</p>
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/knVi86zZGdo" title="How to install LED lights in your car quickly and easily for beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/knVi86zZGdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 
@@ -62,7 +63,7 @@
                     <h4>Guía para Elegir un Volante Deportivo</h4>
                     <p>Te mostramos cómo escoger el volante Momo ideal para la personalización de tu vehículo.</p>
                     <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bELtcvg2vSI" title="DIY - Instalando Volante Deportivo / Marco MAAP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bELtcvg2vSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -72,8 +73,21 @@
     <footer>
         <p>Mundo Auto es una tienda online chilena sin ubicación física, con envíos a todo el país.</p>
         <p>Contáctanos a través de nuestro chat de soporte que redirige a WhatsApp para consultas.</p>
-        <p>&copy; 2024 Mundo Auto. Todos los derechos reservados.</p>
+        <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-summary-footer">
+                <p>Total: <span id="cart-total">$0 CLP</span></p>
+                <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
