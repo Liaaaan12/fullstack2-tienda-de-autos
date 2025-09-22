@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
+                    <li><a href="ordenes.html"><i class="fas fa-clipboard-list"></i> Órdenes</a></li>
+                    <li><a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a></li>
+                    <li><a href="#"><i class="fas fa-user-tag"></i> Roles</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Configuraciones</a></li>
+                    <li><a href="INDEX.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Dashboard de Administración</h2>
+                <div class="user-info">
+                    <span>Bienvenido, Administrador</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+            <section class="dashboard-widgets">
+                <div class="widget">
+                    <h4>Total Productos</h4>
+                    <p>1250</p>
+                    <i class="fas fa-boxes widget-icon"></i>
+                </div>
+                <div class="widget">
+                    <h4>Órdenes Pendientes</h4>
+                    <p>45</p>
+                    <i class="fas fa-clipboard-list widget-icon"></i>
+                </div>
+                <div class="widget">
+                    <h4>Nuevos Usuarios</h4>
+                    <p>12</p>
+                    <i class="fas fa-user-plus widget-icon"></i>
+                </div>
+                <div class="widget">
+                    <h4>Ventas del Mes</h4>
+                    <p>$15,200</p>
+                    <i class="fas fa-dollar-sign widget-icon"></i>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h3>Actividad Reciente</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Acción</th>
+                            <th>Usuario</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Producto 'Laptop' añadido</td>
+                            <td>Admin</td>
+                            <td>2023-10-26 14:30</td>
+                        </tr>
+                        <tr>
+                            <td>Orden #1234 completada</td>
+                            <td>Vendedor Juan</td>
+                            <td>2023-10-26 14:20</td>
+                        </tr>
+                        <tr>
+                            <td>Nuevo cliente registrado</td>
+                            <td>Cliente Ana</td>
+                            <td>2023-10-26 14:15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
