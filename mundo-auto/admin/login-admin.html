@@ -14,7 +14,7 @@
             <form id="login-form">
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="login-username" placeholder="Usuario" required>
+                    <input type="text" id="login-username" placeholder="Usuario" required> 
                 </div>
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
@@ -27,6 +27,7 @@
     </div>
     <script src="../cliente/app.js"></script>
     <script>
+        // Asegura que el formulario llame a la función global loginUser()
         document.getElementById('login-form').addEventListener('submit', window.loginUser);
     </script>
 </body>

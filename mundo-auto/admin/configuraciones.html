@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuraciones</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
+                    <li><a href="ordenes.html"><i class="fas fa-clipboard-list"></i> Órdenes</a></li>
+                    <li><a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a></li>
+                    <li><a href="roles.html"><i class="fas fa-user-tag"></i> Roles</a></li>
+                    <li><a href="configuraciones.html" class="active"><i class="fas fa-cogs"></i> Configuraciones</a></li>
+                    <li><a href="../cliente/mi-cuenta.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Configuraciones del Sistema</h2>
+                <div class="user-info">
+                    <span>Bienvenido, Administrador</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+            <section class="admin-table fade-in">
+                <h3>Ajustes Generales</h3>
+                <form>
+                    <div class="input-group">
+                        <label for="site-name">Nombre del Sitio</label>
+                        <input type="text" id="site-name" value="Mundo Auto">
+                    </div>
+                    <div class="input-group">
+                        <label for="currency">Moneda por Defecto</label>
+                        <input type="text" id="currency" value="CLP">
+                    </div>
+                    <button class="add-button" onclick="alert('Configuraciones guardadas')">Guardar Cambios</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

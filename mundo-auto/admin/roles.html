@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Órdenes</title>
+    <title>Gestión de Roles</title>
     <link rel="stylesheet" href="admin.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
@@ -17,53 +17,53 @@
                 <ul>
                     <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                     <li><a href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
-                    <li><a href="ordenes.html" class="active"><i class="fas fa-clipboard-list"></i> Órdenes</a></li>
+                    <li><a href="ordenes.html"><i class="fas fa-clipboard-list"></i> Órdenes</a></li>
                     <li><a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a></li>
-                    <li><a href="#"><i class="fas fa-user-tag"></i> Roles</a></li>
-                    <li><a href="#"><i class="fas fa-cogs"></i> Configuraciones</a></li>
+                    <li><a href="roles.html" class="active"><i class="fas fa-user-tag"></i> Roles</a></li>
+                    <li><a href="configuraciones.html"><i class="fas fa-cogs"></i> Configuraciones</a></li>
                     <li><a href="../cliente/mi-cuenta.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="main-content">
             <header class="main-header">
-                <h2>Gestión de Órdenes</h2>
+                <h2>Gestión de Roles</h2>
                 <div class="user-info">
                     <span>Bienvenido, Administrador</span>
                     <i class="fas fa-user-circle"></i>
                 </div>
             </header>
             <section class="admin-table fade-in">
+                <h3>Lista de Roles</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th>ID Orden</th>
-                            <th>Cliente</th>
-                            <th>Fecha</th>
-                            <th>Total</th>
-                            <th>Estado</th>
+                            <th>ID</th>
+                            <th>Nombre del Rol</th>
+                            <th>Descripción</th>
+                            <th>Permisos</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#ORD789</td>
-                            <td>Ana Rodríguez</td>
-                            <td>2025-09-21</td>
-                            <td>$185.000</td>
-                            <td class="status-pending">Pendiente</td>
+                            <td>1</td>
+                            <td>Administrador</td>
+                            <td>Acceso total al sistema</td>
+                            <td>Todos</td>
                             <td>
-                                <button class="view-btn" onclick="alert('Ver detalles de la orden #ORD789')"><i class="fas fa-eye"></i></button>
+                                <button class="edit-btn" onclick="alert('Editar rol: Administrador')"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn" onclick="alert('Eliminar rol: Administrador')"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#ORD788</td>
-                            <td>Carlos López</td>
-                            <td>2025-09-20</td>
-                            <td>$55.000</td>
-                            <td class="status-completed">Completada</td>
+                            <td>2</td>
+                            <td>Vendedor</td>
+                            <td>Gestión de órdenes y clientes</td>
+                            <td>Ver/Editar/Eliminar Órdenes, Clientes</td>
                             <td>
-                                <button class="view-btn" onclick="alert('Ver detalles de la orden #ORD788')"><i class="fas fa-eye"></i></button>
+                                <button class="edit-btn" onclick="alert('Editar rol: Vendedor')"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn" onclick="alert('Eliminar rol: Vendedor')"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                     </tbody>

@@ -8,45 +8,72 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <section class="admin-table">
-        <h3>Gestión de Productos</h3>
-        <button class="add-button">Agregar Nuevo Producto</button>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Categoría</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>101</td>
-                    <td>Volante Deportivo</td>
-                    <td>Accesorios</td>
-                    <td>$150.000</td>
-                    <td>25</td>
-                    <td>
-                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                        <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>102</td>
-                    <td>Aceite Sintético</td>
-                    <td>Mantenimiento</td>
-                    <td>$35.000</td>
-                    <td>100</td>
-                    <td>
-                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                        <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="productos.html" class="active"><i class="fas fa-boxes"></i> Productos</a></li>
+                    <li><a href="ordenes.html"><i class="fas fa-clipboard-list"></i> Órdenes</a></li>
+                    <li><a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a></li>
+                    <li><a href="#"><i class="fas fa-user-tag"></i> Roles</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Configuraciones</a></li>
+                    <li><a href="../cliente/mi-cuenta.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Gestión de Productos</h2>
+                <div class="user-info">
+                    <span>Bienvenido, Administrador</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+            <section class="admin-table fade-in">
+                <button class="add-button">Agregar Nuevo Producto</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Volante Deportivo</td>
+                            <td>Accesorios</td>
+                            <td>$150.000</td>
+                            <td>25</td>
+                            <td>
+                                <button class="edit-btn" onclick="alert('Editar producto 101')"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn" onclick="alert('Eliminar producto 101')"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Aceite Sintético</td>
+                            <td>Mantenimiento</td>
+                            <td>$35.000</td>
+                            <td>100</td>
+                            <td>
+                                <button class="edit-btn" onclick="alert('Editar producto 102')"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn" onclick="alert('Eliminar producto 102')"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="admin.js"></script>
 </body>
 </html>

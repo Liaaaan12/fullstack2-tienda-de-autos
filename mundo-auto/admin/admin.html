@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administrador</title>
+    <title>Dashboard de Administración</title>
     <link rel="stylesheet" href="admin.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
@@ -15,13 +15,13 @@
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                     <li><a href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
                     <li><a href="ordenes.html"><i class="fas fa-clipboard-list"></i> Órdenes</a></li>
                     <li><a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a></li>
                     <li><a href="#"><i class="fas fa-user-tag"></i> Roles</a></li>
                     <li><a href="#"><i class="fas fa-cogs"></i> Configuraciones</a></li>
-                    <li><a href="../cliente/INDEX.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                    <li><a href="../cliente/mi-cuenta.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </aside>
@@ -33,7 +33,7 @@
                     <i class="fas fa-user-circle"></i>
                 </div>
             </header>
-            <section class="dashboard-widgets">
+            <section class="dashboard-widgets fade-in">
                 <div class="widget">
                     <h4>Total Productos</h4>
                     <p>1250</p>
@@ -56,7 +56,7 @@
                 </div>
             </section>
 
-            <section class="recent-activity">
+            <section class="recent-activity admin-table fade-in">
                 <h3>Actividad Reciente</h3>
                 <table>
                     <thead>
@@ -68,24 +68,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Producto 'Laptop' añadido</td>
+                            <td>Producto 'Volante Deportivo' añadido</td>
                             <td>Admin</td>
-                            <td>2023-10-26 14:30</td>
+                            <td>2025-09-22 10:00</td>
                         </tr>
                         <tr>
-                            <td>Orden #1234 completada</td>
+                            <td>Orden #789 completada</td>
                             <td>Vendedor Juan</td>
-                            <td>2023-10-26 14:20</td>
+                            <td>2025-09-21 17:30</td>
                         </tr>
                         <tr>
                             <td>Nuevo cliente registrado</td>
                             <td>Cliente Ana</td>
-                            <td>2023-10-26 14:15</td>
+                            <td>2025-09-21 14:15</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
+    <script src="admin.js"></script>
 </body>
 </html>

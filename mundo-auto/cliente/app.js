@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCountElement = document.getElementById('cart-count');
     const productModal = document.getElementById('product-modal');
     const productDetailsContainer = document.getElementById('product-details');
+    const notificationModal = document.getElementById('notification-modal');
+    const notificationMessage = document.getElementById('notification-message');
 
     // Función para actualizar el estado del carrito en el almacenamiento local
     const updateCart = () => {
@@ -65,11 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Usuario o contraseña incorrectos.');
             }
         } else {
+            // LÓGICA DE LOGIN DEL ADMINISTRADOR (Desde login-admin.html)
             if (username === 'admin' && password === 'admin') {
                 const adminUser = { username: 'admin', role: 'admin' };
                 localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
                 alert('Inicio de sesión de administrador exitoso. ¡Bienvenido!');
-                window.location.href = '../admin/admin.html';
+                
+                // CORRECCIÓN CLAVE: Redirige al archivo admin.html, que está en la misma carpeta
+                // desde la que se ejecuta login-admin.html (la carpeta /admin)
+                window.location.href = 'admin.html'; 
             } else {
                 alert('Usuario o contraseña incorrectos.');
             }
@@ -94,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.push({ ...product, quantity: 1 });
         }
         updateCart();
-        alert(`${product.name} ha sido agregado al carrito.`);
+        showNotification(`${product.name} ha sido agregado al carrito.`);
         closeProductModal();
     };
 
@@ -162,6 +168,19 @@ document.addEventListener('DOMContentLoaded', () => {
         productModal.style.display = 'none';
     };
 
+    // --- Funcionalidad del Modal de Notificación ---
+    
+    // Función para mostrar la notificación
+    window.showNotification = (message) => {
+        notificationMessage.textContent = message;
+        notificationModal.style.display = 'flex';
+    };
+    
+    // Función para cerrar la notificación
+    window.closeNotification = () => {
+        notificationModal.style.display = 'none';
+    };
+
     // Cerrar los modales haciendo clic fuera de ellos
     window.onclick = function(event) {
         if (event.target == cartModal) {
@@ -169,6 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (event.target == productModal) {
             closeProductModal();
+        }
+        if (event.target == notificationModal) {
+            closeNotification();
         }
     };
 
