@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mundo Auto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">MUNDO AUTO</div>
+        <nav>
+            <a href="INDEX.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="mi-cuenta.html" class="cta-button">Mi Cuenta</a>
+            <a href="#" class="cart-icon" onclick="openCart()">🛒<span id="cart-count" class="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-form-section fade-in">
+            <div class="contact-form-container">
+                <div class="contact-form-box">
+                    <h2>Envíanos un Mensaje</h2>
+                    <form>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com">
+                        <label for="mensaje">Tu Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        <button type="submit" class="send-button"><i class="fas fa-paper-plane"></i> Enviar Ahora</button>
+                    </form>
+                </div>
+                <div class="contact-info-box">
+                    <p>Estamos listos para escuchar tus ideas. Contáctanos y demos el primer paso para llevar tu auto al siguiente nivel.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Portales 1497, 4160000 Tomé, Tomé, Bio Bio</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+569 75962490</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Mundo.autost@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="horario-atencion">
+                        <h4>Horario de Atención</h4>
+                        <div class="horario-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <p>Lunes a Viernes: 08:30 - 19:00</p>
+                                <p>Sábados: 09:00 - 15:00</p>
+                                <p>Domingos y festivos cerrado</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="google-maps">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.882962325785!2d-72.95574042345513!3d-36.61111099684176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662b212f0a8d673%3A0x777085a69074b889!2sMundo%20Autos%20Tom%C3%A9!5e0!3m2!1ses-419!2scl!4v1717382218334!5m2!1ses-419!2scl" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-logo-section">
+                <div class="footer-logo">MUNDO AUTO</div>
+                <p>Transformando vehículos con pasión, precisión y los mejores accesorios del mercado.</p>
+            </div>
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="INDEX.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="catalogo.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mundoauto" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/mundoauto" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-payments">
+                <h4>MEDIOS DE PAGO</h4>
+                <img src="https://via.placeholder.com/200x120.png?text=QR+Red+compra" alt="Medios de Pago Redcompra">
+                <p>Aceptamos todas las tarjetas en tienda.</p>
+            </div>
+            <div class="footer-qr">
+                <h4>HABLEMOS</h4>
+                <img src="https://via.placeholder.com/150x150.png?text=QR+WhatsApp" alt="Código QR de WhatsApp">
+                <p>¡Escanea este QR y háblanos!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-summary-footer">
+                <p>Total: <span id="cart-total">$0 CLP</span></p>
+                <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

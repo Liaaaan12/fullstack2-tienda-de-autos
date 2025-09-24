@@ -6,13 +6,14 @@
     <title>Catálogo - Mundo Auto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="logo">MUNDO AUTO</div>
         <nav>
-            <a href="index.html">Inicio</a>
+            <a href="INDEX.html">Inicio</a>
             <a href="catalogo.html">Catálogo</a>
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
@@ -26,134 +27,120 @@
             <h1>Catálogo de Productos</h1>
             <p>Filtra por marca, modelo, año y tipo de pieza.</p>
 
-            <div class="product-card-large">
+            <div class="product-card-large fade-in">
                 <h2>Motores</h2>
                 <p>Encuentra el motor perfecto para tu vehículo, nuevo o usado, con garantía de calidad.</p>
                 <div class="category-grid">
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'motor-l200', name: 'Motor Mitsubishi L200', price: 500000, img: 'imagenes/motor mitsubishi l200.jpg'})">
                         <img src="imagenes/motor mitsubishi l200.jpg" alt="motor mitsubishi l200">
                         <h4>Motor mitsubishi l200</h4>
                         <p>$500.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-l200', name: 'Motor mitsubishi l200', price: 500000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'motor-yaris', name: 'Motor Toyota Yaris Sport', price: 900000, img: 'imagenes/motor toyota yaris.jpg'})">
                         <img src="imagenes/motor toyota yaris.jpg" alt="motor toyota yaris">
                         <h4>Motor Toyota Yaris Sport</h4>
                         <p>900.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-yaris', name: 'Motor Toyota Yaris Sport', price: 900000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'motor-f150', name: 'Motor Ford F-150', price: 1200000, img: 'imagenes/motor ford f150.jpg'})">
                         <img src="imagenes/motor ford f150.jpg" alt="motor ford f-150">
                         <h4>Motor Ford F-150</h4>
                         <p>$1.200.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-f150', name: 'Motor Ford F-150', price: 1200000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'motor-accent', name: 'Motor Hyundai Accent', price: 450000, img: 'imagenes/motor hyundai accent.jpg'})">
                         <img src="imagenes/motor hyundai accent.jpg" alt="motor hyundai accent">
                         <h4>Motor Hyundai Accent</h4>
                         <p>$450.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'motor-accent', name: 'Motor Hyundai Accent', price: 450000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
 
-            <div class="product-card-large">
+            <div class="product-card-large fade-in">
                 <h2>Sistemas de Frenos</h2>
                 <p>Kits completos, pastillas, discos y más para asegurar tu viaje.</p>
                 <div class="category-grid">
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'frenos-suzuki', name: 'Kit de Frenos Susuki Swift sport', price: 120000, img: 'imagenes/Susuki Swift Sport Kits de frenos.jpg'})">
                         <img src="imagenes/Susuki Swift Sport Kits de frenos.jpg" alt="kit de frenos Susuki">
                         <h4>Kit de Frenos Susuki Swift sport</h4>
                         <p>$120.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'frenos-suzuki', name: 'Kit de Frenos Susuki Swift sport', price: 120000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'pastillas-bosh', name: 'Pastillas de Freno Bosh', price: 45000, img: 'imagenes/pastillas de frenos bosh.jpg'})">
                         <img src="imagenes/pastillas de frenos bosh.jpg" alt="pastillas de freno bosh">
                         <h4>Pastillas de Freno Bosh</h4>
                         <p>$45.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'pastillas-bosh', name: 'Pastillas de Freno Bosh', price: 45000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'liquido-frenos', name: 'Liquido para frenos', price: 20000, img: 'imagenes/luqido para frenos.jpg'})">
                         <img src="imagenes/luqido para frenos.jpg" alt="liquido para frenos">
                         <h4>Liquido para frenos</h4>
                         <p>$20.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'liquido-frenos', name: 'Liquido para frenos', price: 20000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
 
-            <div class="product-card-large">
+            <div class="product-card-large fade-in">
                 <h2>Cajas de Cambio</h2>
                 <p>Cajas de cambio manuales y automáticas para una transmisión perfecta.</p>
                 <div class="category-grid">
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'caja-ford', name: 'Caja de Cambios Automática Ford Ranger (usada)', price: 480000, img: 'imagenes/caja cambios automaticos ford ranger.jpg'})">
                         <img src="imagenes/caja cambios automaticos ford ranger.jpg" alt="caja de cambios ford ranger">
                         <h4>Caja de Cambios Automática Ford Ranger (usada)</h4>
                         <p>$480.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'caja-ford', name: 'Caja de Cambios Automatica Ford Ranger', price: 480000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'caja-chevy', name: 'Caja de Cambios Manual Chevrolet Spark (nuevo)', price: 220000, img: 'imagenes/caja cambios manual chevrolet spark.jpg'})">
                         <img src="imagenes/caja cambios manual chevrolet spark.jpg" alt="caja de cambios chevrolet spark">
                         <h4>Caja de Cambios Manual Chevrolet Spark (nuevo)</h4>
                         <p>$220.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'caja-chevy', name: 'Caja de Cambios Manual Chevrolet Spark', price: 220000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
 
-            <div class="product-card-large">
+            <div class="product-card-large fade-in">
                 <h2>Accesorios</h2>
                 <p>Personaliza y mejora la estética de tu vehículo.</p>
 
                 <div class="category-grid">
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'volante-momo', name: 'Volante deportivo Momo', price: 150000, img: 'imagenes/volante momo deportivo.jpg'})">
                         <img src="imagenes/volante momo deportivo.jpg" alt="accesorios para autos">
                         <h4>Volante deportivo Momo</h4>
                         <p>$150.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'volante-momo', name: 'Volante deportivo Momo', price: 150000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'butacas-fibra', name: 'Butacas deportivas de fibra', price: 500000, img: 'imagenes/Butacas deportivas fibra.jpg'})">
                         <img src="imagenes/Butacas deportivas fibra.jpg" alt="butacas deportivas de fibra">
                         <h4>Butacas deportivas de fibra</h4>
                         <p>$500.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'butacas-fibra', name: 'Butacas deportivas de fibra', price: 500000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'luces-led', name: 'Kit de Luces LED', price: 25000, img: 'imagenes/kit de luces led.jpg'})">
                         <img src="imagenes/kit de luces led.jpg" alt="kit de luces led">
                         <h4>Kit de Luces LED</h4>
                         <p>$25.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'luces-led', name: 'Kit de Luces LED', price: 25000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card-large">
+            <div class="product-card-large fade-in">
                 <h2>Aceites y Fluidos</h2>
                 <p>Productos esenciales para el mantenimiento preventivo de tu auto.</p>
                 <div class="category-grid">
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'aceite-castrol', name: 'Aceite de Motor Castrol', price: 50000, img: 'imagenes/aceite de motor castrol.jpg'})">
                         <img src="imagenes/aceite de motor castrol.jpg" alt="aceite de motor castrol">
                         <h4>Aceite de Motor Castrol</h4>
                         <p>$50.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'aceite-castrol', name: 'Aceite de Motor Castrol', price: 50000})">Añadir al Carrito</button>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'anticongelante-prestone', name: 'Anticogelante Prestone', price: 30000, img: 'imagenes/anticogelante prestone.jpg'})">
                         <img src="imagenes/anticogelante prestone.jpg" alt="anticogelante prestone">
                         <h4>Anticogelante Prestone</h4>
                         <p>$30.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'anticongelante-prestone', name: 'Anticogelante Prestone', price: 30000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
 
-            <div class="product-card-large">
+            <div class="product-card-large fade-in">
                 <h2>Servicio Técnico</h2>
                 <p>Diagnóstico de fallas para identificar y resolver problemas.</p>
                 <div class="category-grid">
-                    <div class="item">
+                    <div class="item" onclick="openProductModal({id: 'diagnostico', name: 'Diagnóstico de Fallas', price: 25000, img: 'imagenes/faros.jpg'})">
+                        <img src="imagenes/faros.jpg" alt="Diagnóstico de fallas">
                         <h4>Diagnóstico de Fallas</h4>
                         <p>$25.000 CLP</p>
-                        <button class="add-to-cart-btn" onclick="addToCart({id: 'diagnostico', name: 'Diagnóstico de Fallas', price: 25000})">Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -161,10 +148,43 @@
         </section>
     </main>
 
-    <footer>
-        <p>Mundo Auto es una tienda online chilena sin ubicación física, con envíos a todo el país.</p>
-        <p>Contáctanos a través de nuestro chat de soporte que redirige a WhatsApp para consultas.</p>
-        <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-logo-section">
+                <div class="footer-logo">MUNDO AUTO</div>
+                <p>Transformando vehículos con pasión, precisión y los mejores accesorios del mercado.</p>
+            </div>
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="INDEX.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="catalogo.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mundoauto" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/mundoauto" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-payments">
+                <h4>MEDIOS DE PAGO</h4>
+                <img src="https://via.placeholder.com/200x120.png?text=QR+Red+compra" alt="Medios de Pago Redcompra">
+                <p>Aceptamos todas las tarjetas en tienda.</p>
+            </div>
+            <div class="footer-qr">
+                <h4>HABLEMOS</h4>
+                <img src="https://via.placeholder.com/150x150.png?text=QR+WhatsApp" alt="Código QR de WhatsApp">
+                <p>¡Escanea este QR y háblanos!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <div id="cart-modal" class="cart-modal">
@@ -177,6 +197,14 @@
                 <p>Total: <span id="cart-total">$0 CLP</span></p>
                 <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
             </div>
+        </div>
+    </div>
+    
+    <div id="product-modal" class="product-modal">
+        <div class="product-modal-content">
+            <span class="close-btn" onclick="closeProductModal()">&times;</span>
+            <div id="product-details">
+                </div>
         </div>
     </div>
 

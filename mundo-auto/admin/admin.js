@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             // Aquí iría tu lógica real de cierre de sesión (ej. eliminar token, etc.)
             alert('Has cerrado la sesión del administrador.');
-            window.location.href = '../index.html'; // Redirige a la página principal de la tienda
+            window.location.href = '../cliente/index.html'; // Redirige a la página principal de la tienda
         });
     }
 
