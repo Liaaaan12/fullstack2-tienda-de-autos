@@ -73,8 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
                 alert('Inicio de sesión de administrador exitoso. ¡Bienvenido!');
                 
-                // CORRECCIÓN CLAVE: Redirige al archivo admin.html, que está en la misma carpeta
-                // desde la que se ejecuta login-admin.html (la carpeta /admin)
+                // REDIRECCIÓN CONFIRMADA: Apunta al archivo admin.html en la misma carpeta (/admin/)
                 window.location.href = 'admin.html'; 
             } else {
                 alert('Usuario o contraseña incorrectos.');

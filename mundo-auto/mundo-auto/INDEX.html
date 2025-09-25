@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Autos - Venta de Vehículos Nuevos y Usados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">MUNDO AUTOS</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="../mundo-auto/cliente/INDEX.html" class="cta-button">Mundo Repuestos</a>
+            <a href="#" class="cta-button">Vende tu Auto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="animate" style="animation-delay: 0.2s;">ENCUENTRA EL AUTO PERFECTO PARA TI</h1>
+            <p class="animate" style="animation-delay: 0.4s;">La mejor selección de vehículos nuevos y usados en Chile.</p>
+            <form class="search-bar">
+                <select name="marca" required>
+                    <option value="">Marca</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="ford">Ford</option>
+                    <option value="mazda">Mazda</option>
+                </select>
+                <select name="modelo" required>
+                    <option value="">Modelo</option>
+                    <option value="yaris">Yaris</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="cx-5">CX-5</option>
+                </select>
+                <select name="estado" required>
+                    <option value="">Estado</option>
+                    <option value="nuevo">Nuevo</option>
+                    <option value="usado">Usado</option>
+                </select>
+                <button type="submit">Buscar <i class="fas fa-search"></i></button>
+            </form>
+        </section>
+
+        <section class="featured-cars">
+            <h2 class="animate" style="animation-delay: 0.6s;">Ofertas Destacadas</h2>
+            <div class="car-grid">
+                
+                <div class="car-card animate" style="animation-delay: 0.8s;">
+                    <img src="https://via.placeholder.com/350x200.png?text=TOYOTA+YARIS+2023" alt="Toyota Yaris 2023">
+                    <div class="car-info">
+                        <h3>Toyota Yaris 2023</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 15.000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                            <span><i class="fas fa-cogs"></i> Automático</span>
+                        </div>
+                        <p class="car-price">$12.500.000 CLP</p>
+                        <a href="catalogo.html" class="details-btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="car-card animate" style="animation-delay: 1.0s;">
+                    <img src="https://via.placeholder.com/350x200.png?text=FORD+RANGER+2021" alt="Ford Ranger 2021">
+                    <div class="car-info">
+                        <h3>Ford Ranger 2021</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 40.000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-cogs"></i> Manual</span>
+                        </div>
+                        <p class="car-price">$18.990.000 CLP</p>
+                        <a href="catalogo.html" class="details-btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="car-card animate" style="animation-delay: 1.2s;">
+                    <img src="https://via.placeholder.com/350x200.png?text=MAZDA+CX-5+NUEVO" alt="Mazda CX-5 Nuevo">
+                    <div class="car-info">
+                        <h3>Mazda CX-5 Nuevo</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 0 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                            <span><i class="fas fa-cogs"></i> Automático</span>
+                        </div>
+                        <p class="car-price">$24.590.000 CLP</p>
+                        <a href="catalogo.html" class="details-btn">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Mundo Autos. Todos los derechos reservados. Contacto: ventas@mundoautos.cl</p>
+    </footer>
+
+</body>
+</html>

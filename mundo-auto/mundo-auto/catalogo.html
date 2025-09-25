@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Vehículos - Mundo Autos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">MUNDO AUTOS</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="../../mundo-autos/index.html" class="cta-button">Mundo Autos</a>
+            <a href="#" class="cta-button">Vende tu Auto</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="catalog-container">
+            <aside class="filter-sidebar animate" style="animation-delay: 0.2s;">
+                <h3><i class="fas fa-filter"></i> Filtrar Vehículos</h3>
+                <form>
+                    <div class="filter-group">
+                        <label for="f-marca">Marca</label>
+                        <select id="f-marca">
+                            <option value="">Todas</option>
+                            <option>Toyota</option>
+                            <option>Ford</option>
+                            <option>Mazda</option>
+                            <option>Chevrolet</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="f-estado">Estado</label>
+                        <select id="f-estado">
+                            <option value="">Ambos</option>
+                            <option>Nuevo</option>
+                            <option>Usado</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="f-precio-min">Precio Mín.</label>
+                        <input type="number" id="f-precio-min" placeholder="5.000.000">
+                    </div>
+                    <div class="filter-group">
+                        <label for="f-precio-max">Precio Máx.</label>
+                        <input type="number" id="f-precio-max" placeholder="50.000.000">
+                    </div>
+                    <button type="submit" class="apply-filters-btn">Aplicar Filtros</button>
+                </form>
+            </aside>
+
+            <section class="catalog-content">
+                <h2 class="animate" style="animation-delay: 0.4s;">Vehículos Disponibles</h2>
+                <div class="car-grid">
+                    
+                    <div class="car-card animate" style="animation-delay: 0.6s;">
+                        <img src="https://via.placeholder.com/350x200.png?text=CHEVROLET+SPARK+2018" alt="Chevrolet Spark 2018">
+                        <div class="car-info">
+                            <h3>Chevrolet Spark 2018</h3>
+                            <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 80.000 km</span>
+                                <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                                <span><i class="fas fa-cogs"></i> Manual</span>
+                            </div>
+                            <p class="car-price">$7.490.000 CLP</p>
+                            <a href="#" class="details-btn">Ver Detalles</a>
+                        </div>
+                    </div>
+
+                    <div class="car-card animate" style="animation-delay: 0.8s;">
+                        <img src="https://via.placeholder.com/350x200.png?text=FORD+F-150+2022" alt="Ford F-150 2022">
+                        <div class="car-info">
+                            <h3>Ford F-150 2022</h3>
+                            <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 12.000 km</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                                <span><i class="fas fa-cogs"></i> Automático</span>
+                            </div>
+                            <p class="car-price">$45.000.000 CLP</p>
+                            <a href="#" class="details-btn">Ver Detalles</a>
+                        </div>
+                    </div>
+
+                    <div class="car-card animate" style="animation-delay: 1.0s;">
+                        <img src="https://via.placeholder.com/350x200.png?text=HYUNDAI+ACCENT+2019" alt="Hyundai Accent 2019">
+                        <div class="car-info">
+                            <h3>Hyundai Accent 2019</h3>
+                            <div class="car-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 65.000 km</span>
+                                <span><i class="fas fa-gas-pump"></i> Gasolina</span>
+                                <span><i class="fas fa-cogs"></i> Manual</span>
+                            </div>
+                            <p class="car-price">$9.200.000 CLP</p>
+                            <a href="#" class="details-btn">Ver Detalles</a>
+                        </div>
+                    </div>
+                    
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Mundo Autos. Todos los derechos reservados. Contacto: ventas@mundoautos.cl</p>
+    </footer>
+
+</body>
+</html>

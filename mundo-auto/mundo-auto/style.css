@@ -1,0 +1,313 @@
+/* Variables de Colores inspiradas en Rosselot y diseño automotriz profesional */
+:root {
+    --primary-red: #E51E2A; /* Color de acento fuerte */
+    --primary-blue: #007bff; /* Color de botón principal */
+    --dark-text: #1A1A2E;
+    --light-bg: #f4f4f4;
+    --white: #ffffff;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Generales */
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2em;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+nav a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-red);
+}
+
+.cta-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Sección Hero y Búsqueda */
+.hero {
+    background: url('https://images.unsplash.com/photo-1575806300062-87063469a47a?q=80&w=1500&auto=format&fit=crop') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1, .hero p, .hero form {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    animation: slide-down 1s ease-out;
+}
+
+.search-bar {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 1000px;
+    animation: fade-in 1.5s ease-out;
+}
+
+.search-bar select, .search-bar button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.search-bar button {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #b31620;
+}
+
+/* Catálogo y Tarjetas de Carros */
+.car-catalog, .featured-cars {
+    padding: 50px;
+    text-align: center;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.car-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    text-align: left;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    animation: fade-in-up 0.8s ease-out;
+}
+
+.car-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover img {
+    transform: scale(1.05);
+}
+
+.car-info {
+    padding: 20px;
+}
+
+.car-info h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-blue);
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.car-specs {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #6c757d;
+    margin: 15px 0;
+}
+
+.car-price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: 15px;
+}
+
+.details-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #b31620;
+}
+
+/* Filtros avanzados para Catalogo.html */
+.filter-sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: left;
+}
+
+.filter-sidebar h3 {
+    color: var(--primary-red);
+    font-family: 'Oswald', sans-serif;
+    margin-top: 0;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+}
+
+.filter-group select, .filter-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.apply-filters-btn {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.apply-filters-btn:hover {
+    background-color: #0056b3;
+}
+
+.catalog-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    align-items: flex-start;
+}
+
+.catalog-content {
+    flex-grow: 1;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-bg);
+    padding: 30px 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Animaciones */
+@keyframes slide-down {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}

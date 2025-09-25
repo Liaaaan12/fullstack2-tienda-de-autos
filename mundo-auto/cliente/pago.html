@@ -6,6 +6,7 @@
     <title>Pagar - Mundo Auto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,27 +24,73 @@
 
     <main>
         <section class="payment-section">
-            <h1>Confirmación de Pago</h1>
-            <p>Por favor, revisa el resumen de tu pedido antes de proceder al pago.</p>
+            <h1 id="payment-title">Confirmación de Pago</h1>
+            <p id="payment-subtitle">Por favor, revisa el resumen de tu pedido antes de proceder al pago.</p>
 
-            <div class="payment-summary">
-                <h2>Resumen de la Compra</h2>
-                <div id="cart-summary">
+            <div id="payment-interface">
+                <div class="payment-summary payment-col">
+                    <h2>Resumen de la Compra</h2>
+                    <div id="cart-summary">
+                        </div>
+                    
+                    <hr style="border-color: rgba(255, 255, 255, 0.2);">
+                    <p class="total-price"></p>
+                </div>
+
+                <div class="payment-method-container payment-col">
+                    <h2>Método de Pago</h2>
+                    
+                    <div class="payment-tabs">
+                        <button class="tab-button active" onclick="showPaymentTab('card')">
+                            <i class="fas fa-credit-card"></i> Tarjeta
+                        </button>
+                        <button class="tab-button" onclick="showPaymentTab('transfer')">
+                            <i class="fas fa-university"></i> Transferencia
+                        </button>
                     </div>
-                
-                <hr style="border-color: rgba(255, 255, 255, 0.2);">
-                <p class="total-price"></p>
 
-                <button class="pay-button" onclick="window.location.href='INDEX.html'">Proceder al Pago Seguro</button>
+                    <div id="card-payment" class="payment-tab-content active">
+                        <form id="card-form">
+                            <label for="card-number">Número de Tarjeta (Débito/Crédito)</label>
+                            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required pattern="\d{16}" title="Debe contener 16 dígitos.">
+                            
+                            <label for="card-name">Nombre en la Tarjeta</label>
+                            <input type="text" id="card-name" placeholder="Nombre Apellido" required>
+
+                            <div class="card-details-row">
+                                <div>
+                                    <label for="card-expiry">Expiración (MM/AA)</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA" required pattern="\d{2}/\d{2}" title="Formato MM/AA.">
+                                </div>
+                                <div>
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" placeholder="CVV" required pattern="\d{3,4}" title="3 o 4 dígitos.">
+                                </div>
+                            </div>
+                            <button type="submit" class="pay-button">Pagar <span class="total-price-button">$0 CLP</span></button>
+                        </form>
+                    </div>
+
+                    <div id="transfer-payment" class="payment-tab-content">
+                        <h3>Selecciona tu Banco</h3>
+                        <p class="transfer-notice">Serás redirigido para completar la transferencia. El pedido se confirmará al recibir el comprobante.</p>
+                        <div class="bank-options">
+                            <a href="#" class="bank-button" onclick="alert('Simulando redirección a Banco Estado')"><i class="fas fa-bank"></i> Banco Estado</a>
+                            <a href="#" class="bank-button" onclick="alert('Simulando redirección a Banco Falabella')"><i class="fas fa-bank"></i> Banco Falabella</a>
+                            <a href="#" class="bank-button" onclick="alert('Simulando redirección a Banco de Chile')"><i class="fas fa-bank"></i> Banco de Chile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="success-message" class="payment-success-message">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>¡Gracias por tu compra!</h2>
+                <p>Tu pedido ha sido procesado con éxito y será enviado a la dirección proporcionada. Recibirás una confirmación por correo electrónico.</p>
+                <a href="INDEX.html" class="cta-button">Volver al inicio</a>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>Mundo Auto es una tienda online chilena sin ubicación física, con envíos a todo el país.</p>
-        <p>Contáctanos a través de nuestro chat de soporte que redirige a WhatsApp para consultas.</p>
-        <p>© 2024 Mundo Auto. Todos los derechos reservados.</p>
-    </footer>
 
     <div id="cart-modal" class="cart-modal">
         <div class="cart-content">
@@ -57,29 +104,81 @@
             </div>
         </div>
     </div>
+    <div id="product-modal" class="product-modal">
+        <div class="product-modal-content">
+            <span class="close-btn" onclick="closeProductModal()">&times;</span>
+            <div id="product-details">
+                </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
     <script>
+        let currentTotal = 0;
+
+        // Función para cambiar entre pestañas de pago
+        window.showPaymentTab = (tabName) => {
+            document.querySelectorAll('.payment-tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(tabName + '-payment').classList.add('active');
+            document.querySelector(`.tab-button[onclick*='${tabName}']`).classList.add('active');
+        };
+
+        // Función para procesar el pago (simulado)
+        const processPayment = (event) => {
+            event.preventDefault();
+            
+            // 1. Ocultar la interfaz de pago
+            document.getElementById('payment-interface').style.display = 'none';
+            document.getElementById('payment-title').style.display = 'none';
+            document.getElementById('payment-subtitle').style.display = 'none';
+            
+            // 2. Mostrar mensaje de éxito
+            document.getElementById('success-message').style.display = 'block';
+
+            // 3. Limpiar el carrito (Simulación de compra exitosa)
+            localStorage.removeItem('cart');
+            
+            // Opcional: Actualizar el contador del carrito en el header
+            if (window.renderCart) {
+                window.renderCart(); 
+            }
+        };
+
         // Lógica para cargar el carrito en esta página
         document.addEventListener('DOMContentLoaded', () => {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const cartSummary = document.getElementById('cart-summary');
-            const totalPriceElement = document.querySelector('.total-price');
-            let total = 0;
+            const totalPriceElements = document.querySelectorAll('.total-price');
+            const totalPriceButtonElement = document.querySelector('.total-price-button');
+            currentTotal = 0;
 
             if (cart.length === 0) {
                 cartSummary.innerHTML = '<p>El carrito está vacío.</p>';
-                totalPriceElement.textContent = `Total: $0 CLP`;
+                totalPriceElements.forEach(el => el.textContent = `Total: $0 CLP`);
+                totalPriceButtonElement.textContent = `$0 CLP`;
             } else {
                 cartSummary.innerHTML = '';
                 cart.forEach(item => {
                     const itemElement = document.createElement('p');
                     itemElement.textContent = `${item.name} (${item.quantity} unid.) - $${(item.price * item.quantity).toLocaleString('es-CL')} CLP`;
                     cartSummary.appendChild(itemElement);
-                    total += item.price * item.quantity;
+                    currentTotal += item.price * item.quantity;
                 });
-                totalPriceElement.textContent = `Total: $${total.toLocaleString('es-CL')} CLP`;
+                
+                totalPriceElements.forEach(el => el.textContent = `Total: $${currentTotal.toLocaleString('es-CL')} CLP`);
+                if (totalPriceButtonElement) {
+                    totalPriceButtonElement.textContent = `$${currentTotal.toLocaleString('es-CL')} CLP`;
+                }
             }
+
+            // Asignar el evento submit al formulario de tarjeta
+            document.getElementById('card-form').addEventListener('submit', processPayment);
         });
     </script>
 </body>
