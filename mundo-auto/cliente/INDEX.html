@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Repuestos - Repuestos y Accesorios</title>
-    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -32,17 +33,17 @@
         <section class="product-catalog">
             <h2>Productos Destacados</h2>
             <div class="product-grid">
-                <div class="product-card" onclick="openProductModal({id: 'motor-l200', name: 'Motor Mitsubishi L200', price: 500000, img: 'imagenes/motor mitsubishi l200.jpg'})">
+                <div class="product-card fade-in" style="animation-delay: 0.2s;" onclick="openProductModal({id: 'motor-l200', name: 'Motor Mitsubishi L200', price: 500000, img: 'imagenes/motor mitsubishi l200.jpg'})">
                     <img src="imagenes/motor mitsubishi l200.jpg" alt="motor mitsubishi l200">
                     <h3>Motor Mitsubishi L200</h3>
                     <p>$500.000 CLP</p>
                 </div>
-                <div class="product-card" onclick="openProductModal({id: 'frenos-suzuki', name: 'Kit de Frenos para Susuki Swift Sport', price: 120000, img: 'imagenes/Susuki Swift Sport Kits de frenos.jpg'})">
+                <div class="product-card fade-in" style="animation-delay: 0.4s;" onclick="openProductModal({id: 'frenos-suzuki', name: 'Kit de Frenos para Susuki Swift Sport', price: 120000, img: 'imagenes/Susuki Swift Sport Kits de frenos.jpg'})">
                     <img src="imagenes/Susuki Swift Sport Kits de frenos.jpg" alt="kit de frenos Susuki">
                     <h3>Kit de Frenos para Susuki Swift Sport</h3>
                     <p>$120.000 CLP</p>
                 </div>
-                <div class="product-card" onclick="openProductModal({id: 'volante-momo', name: 'Volante deportivo Momo', price: 150000, img: 'imagenes/volante momo deportivo.jpg'})">
+                <div class="product-card fade-in" style="animation-delay: 0.6s;" onclick="openProductModal({id: 'volante-momo', name: 'Volante deportivo Momo', price: 150000, img: 'imagenes/volante momo deportivo.jpg'})">
                     <img src="imagenes/volante momo deportivo.jpg" alt="volante momo">
                     <h3>Volante deportivo Momo</h3>
                     <p>$150.000 CLP</p>
@@ -55,22 +56,22 @@
             <h2>Consejos de Mantenimiento</h2>
             <p>Guías, tutoriales y consejos para el cuidado de tu vehículo.</p>
             <div class="blog-grid">
-                <div class="blog-post">
+                <div class="blog-post fade-in" style="animation-delay: 0.2s;">
                     <img src="imagenes/liquido.jpg" alt="Hombre revisando los niveles de fluidos del motor">
                     <h4>Revisión de niveles de fluidos esenciales</h4>
                     <p>Una guía rápida para verificar el aceite, refrigerante y líquido de frenos.</p>
                 </div>
-                <div class="blog-post">
+                <div class="blog-post fade-in" style="animation-delay: 0.4s;">
                     <img src="imagenes/baterias.jpg" alt="Hombre revisando una batería de auto">
                     <h4>Consejos para el cuidado de la batería</h4>
                     <p>Mantén tu batería en buen estado para evitar quedarte varado.</p>
                 </div>
-                 <div class="blog-post">
+                 <div class="blog-post fade-in" style="animation-delay: 0.6s;">
                     <img src="imagenes/motor.jpg" alt="Motor de auto con humo">
                     <h4>Qué hacer si el motor se sobrecalienta</h4>
                     <p>Pasos a seguir si la temperatura del motor sube más de lo normal.</p>
                 </div>
-                 <div class="blog-post">
+                 <div class="blog-post fade-in" style="animation-delay: 0.8s;">
                     <img src="imagenes/faros.jpg" alt="Auto con faros opacos">
                     <h4>Cómo limpiar los faros opacos</h4>
                     <p>Restaura la claridad de tus faros y mejora la visibilidad nocturna.</p>
@@ -119,37 +120,14 @@
     </footer>
 
     <div id="cart-modal" class="cart-modal">
-        <div class="cart-content">
-            <span class="close-btn" onclick="closeCart()">&times;</span>
-            <h2>Tu Carrito</h2>
-            <div id="cart-items">
-                </div>
-            <div class="cart-summary-footer">
-                <p>Total: <span id="cart-total">$0 CLP</span></p>
-                <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
-            </div>
         </div>
-    </div>
     
     <div id="product-modal" class="product-modal">
-        <div class="product-modal-content">
-            <span class="close-btn" onclick="closeProductModal()">&times;</span>
-            <div id="product-details">
-                </div>
         </div>
-    </div>
 
     <div id="notification-modal" class="notification-modal">
-        <div class="notification-content">
-            <div class="notification-header">
-                <p>Esta página dice</p>
-            </div>
-            <div class="notification-body">
-                <p id="notification-message"></p>
-                <button class="notification-button" onclick="closeNotification()">Aceptar</button>
-            </div>
         </div>
-    </div>
 
-    <script src="app.js"></script> </body>
+    <script src="app.js"></script>
+</body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagar - Mundo Auto</title>
+    <title>Pagar - Mundo Repuestos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -11,9 +11,10 @@
 <body>
 
     <header>
-        <div class="logo">MUNDO AUTO</div>
+        <div class="logo">MUNDO REPUESTOS</div>
         <nav>
             <a href="INDEX.html">Inicio</a>
+            <a href="../../mundo-autos/index.html" class="cta-button">Mundo Autos</a>
             <a href="catalogo.html">Catálogo</a>
             <a href="blog.html">Blog</a>
             <a href="contacto.html">Contacto</a>
@@ -23,9 +24,9 @@
     </header>
 
     <main>
-        <section class="payment-section">
-            <h1 id="payment-title">Confirmación de Pago</h1>
-            <p id="payment-subtitle">Por favor, revisa el resumen de tu pedido antes de proceder al pago.</p>
+        <section class="payment-section fade-in">
+            <h1 id="payment-title">Confirmación y Pago</h1>
+            <p id="payment-subtitle">Finaliza tu pedido a continuación.</p>
 
             <div id="payment-interface">
                 <div class="payment-summary payment-col">
@@ -34,7 +35,7 @@
                         </div>
                     
                     <hr style="border-color: rgba(255, 255, 255, 0.2);">
-                    <p class="total-price"></p>
+                    <p class="total-price">Total: $0 CLP</p>
                 </div>
 
                 <div class="payment-method-container payment-col">
@@ -51,7 +52,7 @@
 
                     <div id="card-payment" class="payment-tab-content active">
                         <form id="card-form">
-                            <label for="card-number">Número de Tarjeta (Débito/Crédito)</label>
+                            <label for="card-number">Número de Tarjeta</label>
                             <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required pattern="\d{16}" title="Debe contener 16 dígitos.">
                             
                             <label for="card-name">Nombre en la Tarjeta</label>
@@ -75,9 +76,9 @@
                         <h3>Selecciona tu Banco</h3>
                         <p class="transfer-notice">Serás redirigido para completar la transferencia. El pedido se confirmará al recibir el comprobante.</p>
                         <div class="bank-options">
-                            <a href="#" class="bank-button" onclick="alert('Simulando redirección a Banco Estado')"><i class="fas fa-bank"></i> Banco Estado</a>
-                            <a href="#" class="bank-button" onclick="alert('Simulando redirección a Banco Falabella')"><i class="fas fa-bank"></i> Banco Falabella</a>
-                            <a href="#" class="bank-button" onclick="alert('Simulando redirección a Banco de Chile')"><i class="fas fa-bank"></i> Banco de Chile</a>
+                            <a href="#" class="bank-button cta-button" onclick="alert('Simulando redirección a Banco Estado')"><i class="fas fa-bank"></i> Banco Estado</a>
+                            <a href="#" class="bank-button cta-button" onclick="alert('Simulando redirección a Banco Falabella')"><i class="fas fa-bank"></i> Banco Falabella</a>
+                            <a href="#" class="bank-button cta-button" onclick="alert('Simulando redirección a Banco de Chile')"><i class="fas fa-bank"></i> Banco de Chile</a>
                         </div>
                     </div>
                 </div>
@@ -91,32 +92,15 @@
             </div>
         </section>
     </main>
-
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-content">
-            <span class="close-btn" onclick="closeCart()">&times;</span>
-            <h2>Tu Carrito</h2>
-            <div id="cart-items">
-                </div>
-            <div class="cart-summary-footer">
-                <p>Total: <span id="cart-total">$0 CLP</span></p>
-                <a href="pago.html" class="checkout-btn">Ir a Pagar</a>
-            </div>
-        </div>
-    </div>
-    <div id="product-modal" class="product-modal">
-        <div class="product-modal-content">
-            <span class="close-btn" onclick="closeProductModal()">&times;</span>
-            <div id="product-details">
-                </div>
-        </div>
-    </div>
+    
+    <div id="cart-modal" class="cart-modal"></div>
+    <div id="product-modal" class="product-modal"></div>
 
     <script src="app.js"></script>
     <script>
+        // Lógica de pestañas de pago y procesamiento de pago (desde el archivo anterior)
         let currentTotal = 0;
 
-        // Función para cambiar entre pestañas de pago
         window.showPaymentTab = (tabName) => {
             document.querySelectorAll('.payment-tab-content').forEach(tab => {
                 tab.classList.remove('active');
@@ -129,28 +113,22 @@
             document.querySelector(`.tab-button[onclick*='${tabName}']`).classList.add('active');
         };
 
-        // Función para procesar el pago (simulado)
         const processPayment = (event) => {
             event.preventDefault();
             
-            // 1. Ocultar la interfaz de pago
             document.getElementById('payment-interface').style.display = 'none';
             document.getElementById('payment-title').style.display = 'none';
             document.getElementById('payment-subtitle').style.display = 'none';
             
-            // 2. Mostrar mensaje de éxito
             document.getElementById('success-message').style.display = 'block';
 
-            // 3. Limpiar el carrito (Simulación de compra exitosa)
             localStorage.removeItem('cart');
             
-            // Opcional: Actualizar el contador del carrito en el header
             if (window.renderCart) {
                 window.renderCart(); 
             }
         };
 
-        // Lógica para cargar el carrito en esta página
         document.addEventListener('DOMContentLoaded', () => {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const cartSummary = document.getElementById('cart-summary');
@@ -161,7 +139,7 @@
             if (cart.length === 0) {
                 cartSummary.innerHTML = '<p>El carrito está vacío.</p>';
                 totalPriceElements.forEach(el => el.textContent = `Total: $0 CLP`);
-                totalPriceButtonElement.textContent = `$0 CLP`;
+                if (totalPriceButtonElement) totalPriceButtonElement.textContent = `$0 CLP`;
             } else {
                 cartSummary.innerHTML = '';
                 cart.forEach(item => {
@@ -176,8 +154,6 @@
                     totalPriceButtonElement.textContent = `$${currentTotal.toLocaleString('es-CL')} CLP`;
                 }
             }
-
-            // Asignar el evento submit al formulario de tarjeta
             document.getElementById('card-form').addEventListener('submit', processPayment);
         });
     </script>
